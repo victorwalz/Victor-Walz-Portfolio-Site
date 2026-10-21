@@ -31,4 +31,4 @@ Landing Page moderna e profissional desenvolvida para apresentar os projetos, ha
 
 ---
 
-## 🚀 Como Visualizar
+https://victorwalz.github.io/Victor-Walz-Portfolio-Site/

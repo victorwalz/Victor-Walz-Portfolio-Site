@@ -6,19 +6,19 @@ Landing Page moderna e profissional desenvolvida para apresentar os projetos, ha
 
 ## 🌟 Seções da Landing Page
 
-1. **Início (Hero)**: Apresentação de impacto, chamada para ação (CTA), terminal interativo com dados do desenvolvedor e status de disponibilidade.
-2. **Quem sou**: História, princípios de desenvolvimento, compromisso com qualidade e métricas de dedicação.
+1. **Início (Hero)**: Apresentação de impacto, chamada para ação (CTA), terminal interativo com meus dados e status de disponibilidade.
+2. **Quem sou**: Minha história, princípios de desenvolvimento, compromisso com qualidade e métricas de dedicação.
 3. **Habilidades**: Organizadas por categorias com ícones visuais:
    - Front-end & Interface
    - Back-end & Arquitetura
    - Bancos de Dados & SQL
    - Ferramentas, Versionamento e IA
-4. **Projetos recentes**: Showcase interativo com filtros dinâmicos por categoria (*Web*, *Backend*):
+4. **Projetos recentes**(Em desenvolvimento): Showcase interativo com filtros dinâmicos por categoria (*Web*, *Backend*):
    - *Grão & Trigo — Café & Padaria Artesanal (E-Commerce Retrô & SQL)*
    - *Sistema de Gestão & Utilitários (Software IA em Java)*
    - *Grease Service Car*
 5. **FAQs**: Acordeão retrátil com animação suave respondendo às dúvidas mais frequentes sobre serviços e contratação.
-6. **Contatos**: Formulário funcional com validação e feedback instantâneo, botão de cópia rápida de e-mail com notificação *Toast* e links diretos para WhatsApp, LinkedIn e GitHub.
+6. **Contatos**: Formulário funcional com validação e feedback instantâneo, botão de cópia rápida de e-mail com notificação *Toast* e links diretos para Instagram, WhatsApp, LinkedIn e GitHub.
 
 ---
 
@@ -33,5 +33,4 @@ Landing Page moderna e profissional desenvolvida para apresentar os projetos, ha
 
 ## 🚀 Como Visualizar
 
-Basta abrir o arquivo [`index.html`](./index.html) em qualquer navegador moderno, ou utilizar uma extensão como o **Live Server** no VS Code.
-
+Basta abrir o link : https://victorwalz.github.io/Victor-Walz-Portfolio-Site/

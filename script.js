@@ -35,28 +35,61 @@ document.addEventListener('DOMContentLoaded', () => {
   handleScroll();
 
   /* --------------------------------------------------------------------------
-     2. Menu Mobile (Hambúrguer)
+     2. Menu Mobile (Hambúrguer) Acessível & Touch-friendly
      -------------------------------------------------------------------------- */
   const toggleMobileMenu = () => {
     const isOpen = navMenu.classList.toggle('open');
     menuToggle.classList.toggle('active');
     menuToggle.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   };
 
   const closeMobileMenu = () => {
-    navMenu.classList.remove('open');
-    menuToggle.classList.remove('active');
-    menuToggle.setAttribute('aria-expanded', 'false');
+    if (navMenu.classList.contains('open')) {
+      navMenu.classList.remove('open');
+      menuToggle.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
   };
 
   if (menuToggle) {
-    menuToggle.addEventListener('click', toggleMobileMenu);
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileMenu();
+    });
   }
 
-  // Fechar menu mobile ao clicar em um link
+  // Fechar menu mobile ao clicar em um link interno
   navLinks.forEach(link => {
     link.addEventListener('click', closeMobileMenu);
   });
+
+  const mobileCtaBtn = document.querySelector('.mobile-cta-btn');
+  if (mobileCtaBtn) {
+    mobileCtaBtn.addEventListener('click', closeMobileMenu);
+  }
+
+  // Fechar ao clicar fora do menu
+  document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
+
+  // Fechar com a tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+      closeMobileMenu();
+    }
+  });
+
+  // Fechar menu ao redimensionar além de 768px (modo desktop)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navMenu.classList.contains('open')) {
+      closeMobileMenu();
+    }
+  }, { passive: true });
 
   /* --------------------------------------------------------------------------
      3. ScrollSpy: Destacar link ativo conforme a rolagem
@@ -130,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* --------------------------------------------------------------------------
-     6. Função Helper de Notificação Toast
+     6. Função Auxiliar de Notificação Toast
      -------------------------------------------------------------------------- */
   let toastTimeout;
   const showToast = (message, duration = 3500) => {
@@ -160,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
           icon.className = 'fa-regular fa-copy';
         }, 2200);
       } catch (err) {
-        // Fallback para navegadores legados
+        // Alternativa de cópia para navegadores antigos
         const textArea = document.createElement('textarea');
         textArea.value = textToCopy;
         document.body.appendChild(textArea);

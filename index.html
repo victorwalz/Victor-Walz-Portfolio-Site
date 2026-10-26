@@ -7,39 +7,39 @@
   <meta name="keywords" content="Victor Walz, WalzDEV, Desenvolvedor Web, Java, JavaScript, Frontend, Backend, Portfólio">
   <meta name="author" content="Victor Walz">
 
-  <!-- Open Graph -->
+  <!-- Metadados Open Graph para Redes Sociais -->
   <meta property="og:title" content="WalzDEV | Victor Walz - Desenvolvedor de Software">
   <meta property="og:description" content="Portfólio profissional de Victor Walz: soluções modernas em desenvolvimento de software e web.">
   <meta property="og:type" content="website">
 
   <title>WalzDEV | Victor Walz — Desenvolvedor de Software</title>
 
-  <!-- Google Fonts -->
+  <!-- Fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome Icons -->
+  <!-- Ícones do Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Stylesheet -->
+  <!-- Folha de Estilos Principal -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Background Decorative Ambient Glows -->
+  <!-- Efeitos Decorativos de Luz e Grade de Fundo -->
   <div class="glow-sphere glow-1" aria-hidden="true"></div>
   <div class="glow-sphere glow-2" aria-hidden="true"></div>
   <div class="grid-overlay" aria-hidden="true"></div>
 
-  <!-- Header / Navigation -->
+  <!-- Cabeçalho e Navegação Principal -->
   <header class="site-header" id="header">
     <div class="container nav-container">
       <a href="#inicio" class="logo" aria-label="Ir para o início">
         <span class="logo-bracket">&lt;</span><span class="logo-text">Walz</span><span class="logo-accent">DEV</span><span class="logo-bracket">/&gt;</span>
       </a>
 
-      <!-- Desktop Navigation -->
+      <!-- Menu de Navegação -->
       <nav class="nav-menu" id="nav-menu">
         <ul class="nav-list">
           <li class="nav-item"><a href="#sobre" class="nav-link">Quem sou</a></li>
@@ -47,6 +47,12 @@
           <li class="nav-item"><a href="#projetos" class="nav-link">Projetos recentes</a></li>
           <li class="nav-item"><a href="#faqs" class="nav-link">FAQs</a></li>
           <li class="nav-item"><a href="#contatos" class="nav-link">Contatos</a></li>
+          <li class="nav-item mobile-cta-item">
+            <a href="#contatos" class="btn btn-primary btn-sm mobile-cta-btn">
+              <span>Bora conversar</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </a>
+          </li>
         </ul>
       </nav>
 
@@ -56,7 +62,7 @@
           <i class="fa-solid fa-paper-plane"></i>
         </a>
 
-        <!-- Mobile Toggle Button -->
+        <!-- Botão do Menu Mobile (Hambúrguer) -->
         <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -67,7 +73,7 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Seção Inicial (Hero) -->
     <section class="hero-section" id="inicio">
       <div class="container hero-container">
         <div class="hero-content">
@@ -98,6 +104,10 @@
 
           <div class="hero-socials">
             <span class="social-label">Conecte-se:</span>
+
+            <a href="https://www.instagram.com/victor.walz/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
             <a href="https://github.com/victorwalz" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
               <i class="fa-brands fa-github"></i>
             </a>
@@ -110,7 +120,7 @@
           </div>
         </div>
 
-        <!-- Hero Terminal Card Visual -->
+        <!-- Cartão Visual do Terminal Interativo -->
         <div class="hero-visual">
           <div class="code-card">
             <div class="card-header">
@@ -142,7 +152,7 @@
       </div>
     </section>
 
-    <!-- Quem Sou (About) Section -->
+    <!-- Seção Quem Sou (Sobre Mim) -->
     <section class="section about-section" id="sobre">
       <div class="container">
         <div class="section-header">
@@ -215,7 +225,7 @@
       </div>
     </section>
 
-    <!-- Habilidades (Skills) Section -->
+    <!-- Seção de Habilidades Técnicas -->
     <section class="section skills-section" id="habilidades">
       <div class="container">
         <div class="section-header">
@@ -305,7 +315,7 @@
       </div>
     </section>
 
-    <!-- Projetos Recentes Section -->
+    <!-- Seção de Projetos Recentes -->
     <section class="section projects-section" id="projetos">
       <div class="container">
         <div class="section-header">
@@ -316,7 +326,7 @@
           </p>
         </div>
 
-        <!-- Filter Buttons -->
+        <!-- Botões de Filtragem por Categoria -->
         <div class="project-filters">
           <button class="filter-btn active" data-filter="all">Todos</button>
           <button class="filter-btn" data-filter="web">Web & Frontend</button>
@@ -469,7 +479,7 @@
       </div>
     </section>
 
-    <!-- FAQs Section -->
+    <!-- Seção de Perguntas Frequentes (FAQs) -->
     <section class="section faq-section" id="faqs">
       <div class="container">
         <div class="section-header">
@@ -548,7 +558,7 @@
       </div>
     </section>
 
-    <!-- Contatos Section -->
+    <!-- Seção de Contatos -->
     <section class="section contact-section" id="contatos">
       <div class="container">
         <div class="section-header">
@@ -560,7 +570,7 @@
         </div>
 
         <div class="contact-grid">
-          <!-- Contact Info Cards -->
+          <!-- Cartões com Informações de Contato -->
           <div class="contact-info-column">
             <div class="contact-card">
               <div class="contact-icon icon-cyan">
@@ -574,7 +584,20 @@
                 <i class="fa-regular fa-copy"></i>
               </button>
             </div>
-
+            <div class="contact-card">
+              <div class="contact-icon icon-purple">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="contact-text">
+                <span class="card-label">Instagram</span>
+                <a href="https://www.instagram.com/victor.walz/" target="_blank" rel="noopener noreferrer" class="card-value">Conversar pelo Instagram</a>
+              </div>
+              <div>
+                <a href="https://www.instagram.com/victor.walz/" target="_blank" rel="noopener noreferrer" class="btn-external" title="Abrir Instagram">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
             <div class="contact-card">
               <div class="contact-icon icon-emerald">
                 <i class="fa-brands fa-whatsapp"></i>
@@ -616,11 +639,11 @@
 
             <div class="location-badge">
               <i class="fa-solid fa-location-dot"></i>
-              <span>Santa Catarina, Brasil • Atendimento remoto global</span>
+              <span>Blumenau - Santa Catarina, Brasil • Atendimento remoto global</span>
             </div>
           </div>
 
-          <!-- Contact Form -->
+          <!-- Formulário de Contato Direto -->
           <div class="contact-form-column">
             <form class="contact-form" id="contact-form">
               <h3 class="form-title">Envie uma Mensagem</h3>
@@ -670,7 +693,7 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Rodapé Institucional -->
   <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-brand">
@@ -696,6 +719,7 @@
       <div class="footer-social-column">
         <h4>Redes & Código</h4>
         <div class="footer-socials">
+          <a href="https://www.instagram.com/victor.walz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://github.com/victorwalz" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
           <a href="https://www.linkedin.com/in/victor-alexandre-walz-076226281/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="https://wa.me/47988565276" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -714,10 +738,10 @@
     </div>
   </footer>
 
-  <!-- Toast Notification Container -->
+  <!-- Notificação Flutuante Toast -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <!-- JavaScript -->
+  <!-- Scripts JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>

@@ -19,6 +19,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const formFeedback = document.getElementById('form-feedback');
   const submitBtn = document.getElementById('submit-btn');
   const toast = document.getElementById('toast');
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+
+  /* --------------------------------------------------------------------------
+     0. Alternância de Tema Claro / Escuro
+     -------------------------------------------------------------------------- */
+  const THEME_KEY = 'walzdev-theme';
+
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (themeIcon) {
+      themeIcon.className = theme === 'light' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    }
+    if (themeToggleBtn) {
+      themeToggleBtn.setAttribute('aria-label', theme === 'light' ? 'Ativar modo escuro' : 'Ativar modo claro');
+      themeToggleBtn.setAttribute('title', theme === 'light' ? 'Ativar modo escuro' : 'Ativar modo claro');
+    }
+    localStorage.setItem(THEME_KEY, theme);
+  };
+
+  // Carrega preferência salva ou usa preferência do sistema
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      applyTheme(current === 'light' ? 'dark' : 'light');
+    });
+  }
 
   /* --------------------------------------------------------------------------
      1. Header Dinâmico com Sombra no Scroll
@@ -206,43 +237,64 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     8. Formulário de Contato com Validação e Feedback
+     8. Formulário de Contato — Envio via mailto para victorwalz.dev@gmail.com
      -------------------------------------------------------------------------- */
+  const CONTACT_EMAIL = 'victorwalz.dev@gmail.com';
+
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
       const subject = document.getElementById('subject').value.trim();
       const message = document.getElementById('message').value.trim();
 
       if (!name || !email || !subject || !message) {
         formFeedback.className = 'form-feedback error';
         formFeedback.textContent = 'Por favor, preencha todos os campos obrigatórios.';
+        formFeedback.style.display = 'block';
         return;
       }
 
-      // Efeito de envio
+      // Efeito visual de envio
       const originalBtnHTML = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Enviando...</span>';
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Abrindo e-mail...</span>';
+
+      // Monta o corpo do e-mail com os dados do formulário
+      const emailBody =
+        `Nome: ${name}\n` +
+        `E-mail do remetente: ${email}\n` +
+        `Assunto: ${subject}\n\n` +
+        `Mensagem:\n${message}`;
+
+      const mailtoLink =
+        `mailto:${CONTACT_EMAIL}` +
+        `?subject=${encodeURIComponent('[WalzDEV] ' + subject)}` +
+        `&body=${encodeURIComponent(emailBody)}`;
+
+      // Abre o cliente de e-mail do usuário
+      window.location.href = mailtoLink;
 
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnHTML;
 
         formFeedback.className = 'form-feedback success';
-        formFeedback.innerHTML = `Obrigado pelo contato, <strong>${name}</strong>! Sua mensagem foi enviada com sucesso. Retornarei em breve.`;
-        
-        showToast('Mensagem enviada com sucesso! 🚀');
+        formFeedback.innerHTML =
+          `Obrigado, <strong>${name}</strong>! Seu cliente de e-mail foi aberto com a mensagem preenchida. ` +
+          `Basta confirmar o envio por lá. Retornarei em breve! 🚀`;
+        formFeedback.style.display = 'block';
+
+        showToast('Cliente de e-mail aberto! Confirme o envio por lá. 📧');
         contactForm.reset();
 
         setTimeout(() => {
           formFeedback.style.display = 'none';
           formFeedback.className = 'form-feedback';
-        }, 6000);
-      }, 1200);
+        }, 8000);
+      }, 900);
     });
   }
 });

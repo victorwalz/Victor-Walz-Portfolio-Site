@@ -1,6 +1,6 @@
 # WalzDEV — Portfólio de Victor Walz
 
-Landing Page moderna e profissional desenvolvida para apresentar os projetos, habilidades técnicas e canais de contato de **Victor Walz** (`WalzDEV`).
+Breve Landing Page moderna e profissional desenvolvida para apresentar meus projetos, habilidades técnicas e canais de contato (`WalzDEV`).
 
 ---
 
